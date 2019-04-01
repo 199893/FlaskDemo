@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../static/js/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+		<script src="../static/js/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../static/js/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<style type="text/css">
+			h1{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<form action="/detail1" method="post">
+			<h1><a href="/detail">进入删除界面</a></h1>
+			<h1 style="margin-left: 600px;"><a href="/add">返回添加界面</a></h1>
+			<h1 style="margin-left: 600px;"><a href="/">返回首页</a></h1>
+			
+			<table class="table table-hover">
+				<tr>
+					<th>ID</th>
+					<th>名字</th>
+					<th>内容</th>
+				</tr>
+				{% for i in descinfo %}
+				
+				<tr>
+					<td>
+						<span style="margin-left: 20px;">{{i.id}}</span>
+					</td>
+					<td>
+						<a href="#"><span style="margin-left: 20px;">{{i.name}}</span></a>
+					</td>
+					<td>
+						<span style="margin-left: 20px;">{{i.desc}}</span>	
+					</td>
+				</tr>
+				{% endfor %}
+			</table>
+				
+			修改项id：<input type="text" name="id"  />
+			修改名字：<input type="text" name="id1"  />
+			修改内容：<input type="text" name="id2"  />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

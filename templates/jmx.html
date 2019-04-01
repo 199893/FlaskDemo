@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册界面</title>
+	<style type="text/css">
+		body{
+			background-color: #737373;
+			
+		}
+		h1{
+			float: left;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:link { 
+			color:#000000; 
+			
+		} 
+		a:visited { 
+			color:#33A6DC; 
+			
+		} 
+		a:hover { 
+			color:#000000; 
+			
+		} 
+		a:active { 
+			color:#FFFFFF; 
+			
+		} 
+		form{
+			margin-left: 33%;
+		}
+		form input[type='text']{
+			width: 300px;
+			height: 30px;
+			margin-top: 20px;
+		}
+		form input[type='submit']{
+			width: 60px;
+			height: 40px;
+			margin-top: 20px;
+			
+		}
+	</style>
+</head>
+<body>
+	{% if userinfo %}
+		<h3><a href="/add">你好:{{userinfo}}</a></h3><br>
+		<h3><a href="/quit">退出</a></h3>
+        <h1><a href="/add">进入添加界面</a></h1>
+        <h1><a href="/detail" style="margin-left: 600px;">进入删除界面</a></h1>
+        <h1><a href="/detail1" style="margin-left: 600px;">进入修改界面</a></h1>
+
+	{% else %}
+		<h3><a href="/register">登录</a><br></h3><br>
+		<h3><a href="/login">注册</a></h3>
+	{% endif %}
+
+</body>
+</html>
